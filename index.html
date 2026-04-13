@@ -1,1074 +1,731 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Style Black | Moda Premium 2026</title>
-    <!-- Font Awesome 6 (free) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d4af37;
-            border-radius: 10px;
-        }
-
-        .header {
-            background-color: #000000;
-            border-bottom: 1px solid #d4af37;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(2px);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: baseline;
-            gap: 5px;
-            cursor: pointer;
-        }
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #ffffff 30%, #d4af37 80%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
-        }
-        .logo-sub {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #d4af37;
-            letter-spacing: 2px;
-        }
-        .style-badge {
-            font-size: 0.9rem;
-            font-weight: 600;
-            background: #d4af37;
-            color: black;
-            padding: 2px 8px;
-            border-radius: 30px;
-            margin-left: 8px;
-        }
-        .year-badge {
-            font-size: 0.7rem;
-            background: #1f1f1f;
-            padding: 2px 6px;
-            border-radius: 20px;
-            margin-left: 6px;
-            color: #d4af37;
-        }
-
-        .cart-icon {
-            position: relative;
-            background: #111;
-            padding: 10px 16px;
-            border-radius: 40px;
-            border: 1px solid #333;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        .cart-icon:hover {
-            border-color: #d4af37;
-            background: #1a1a1a;
-        }
-        .cart-count {
-            background-color: #d4af37;
-            color: #000;
-            font-weight: bold;
-            font-size: 0.8rem;
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            top: -8px;
-            right: -8px;
-        }
-        .cart-price {
-            margin-left: 8px;
-            font-weight: 600;
-            color: #d4af37;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #050505, #1a120b);
-            border-radius: 28px;
-            padding: 2.5rem 2rem;
-            margin-bottom: 3rem;
-            border: 1px solid #2a2a2a;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(120deg, #fff, #d4af37);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .hero p {
-            color: #aaa;
-            margin-top: 1rem;
-            font-size: 1.1rem;
-        }
-        .hero .gold-border {
-            width: 100px;
-            height: 3px;
-            background: #d4af37;
-            margin: 1rem auto 0;
-        }
-        .collection-tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.2);
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            margin-top: 1rem;
-            border: 1px solid #d4af37;
-        }
-
-        .brand-filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 2rem;
-            justify-content: center;
-        }
-        .brand-btn {
-            background: #111;
-            border: 1px solid #2c2c2c;
-            padding: 8px 20px;
-            border-radius: 40px;
-            color: #ddd;
-            font-weight: 500;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        .brand-btn.active, .brand-btn:hover {
-            background: #d4af37;
-            color: black;
-            border-color: #d4af37;
-            font-weight: 600;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-        .product-card {
-            background: #0f0f0f;
-            border-radius: 24px;
-            overflow: hidden;
-            transition: transform 0.25s ease, box-shadow 0.3s;
-            border: 1px solid #2a2a2a;
-        }
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.8);
-            border-color: #d4af37;
-        }
-        .product-img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        .product-card:hover .product-img img {
-            transform: scale(1.03);
-        }
-        .product-info {
-            padding: 1.2rem;
-        }
-        .brand-tag {
-            display: inline-block;
-            background: #1f1f1f;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #d4af37;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-        .product-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 0.4rem 0;
-            color: white;
-        }
-        .product-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #d4af37;
-            margin: 10px 0;
-        }
-        .add-to-cart {
-            background: #000;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 10px 0;
-            width: 100%;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .add-to-cart:hover {
-            background: #d4af37;
-            color: black;
-        }
-
-        /* CARRINHO SIDEBAR COM CEP */
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.85);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-            visibility: hidden;
-            opacity: 0;
-            transition: 0.3s;
-        }
-        .cart-overlay.open {
-            visibility: visible;
-            opacity: 1;
-        }
-        .cart-sidebar {
-            position: fixed;
-            right: 0;
-            top: 0;
-            width: 100%;
-            max-width: 520px;
-            height: 100%;
-            background: #0c0c0c;
-            border-left: 2px solid #d4af37;
-            box-shadow: -8px 0 30px rgba(0,0,0,0.8);
-            z-index: 1001;
-            transform: translateX(100%);
-            transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            display: flex;
-            flex-direction: column;
-        }
-        .cart-overlay.open .cart-sidebar {
-            transform: translateX(0);
-        }
-        .cart-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid #2c2c2c;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .cart-header h2 {
-            color: #d4af37;
-            font-weight: 700;
-        }
-        .close-cart {
-            font-size: 1.8rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #aaa;
-            transition: 0.2s;
-        }
-        .close-cart:hover {
-            color: #d4af37;
-        }
-        .cart-items {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1rem;
-        }
-        .cart-item {
-            display: flex;
-            gap: 12px;
-            background: #111;
-            margin-bottom: 1rem;
-            border-radius: 20px;
-            padding: 12px;
-            border: 1px solid #2a2a2a;
-        }
-        .cart-item-img {
-            width: 70px;
-            height: 70px;
-            background: #1e1e1e;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .cart-item-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .cart-item-details {
-            flex: 1;
-        }
-        .cart-item-title {
-            font-weight: 600;
-        }
-        .cart-item-price {
-            color: #d4af37;
-        }
-        .cart-item-qty {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 8px;
-        }
-        .qty-btn {
-            background: #1f1f1f;
-            border: none;
-            color: white;
-            width: 26px;
-            height: 26px;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .remove-item {
-            color: #ff5e5e;
-            background: none;
-            border: none;
-            margin-left: 10px;
-            cursor: pointer;
-            font-size: 0.8rem;
-        }
-        
-        /* SEÇÃO CEP */
-        .cep-section {
-            background: #111;
-            border-radius: 20px;
-            padding: 1rem;
-            margin: 1rem;
-            border: 1px solid #2a2a2a;
-        }
-        .cep-title {
-            color: #d4af37;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .cep-input-group {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .cep-input-group input {
-            flex: 1;
-            background: #1f1f1f;
-            border: 1px solid #333;
-            padding: 12px;
-            border-radius: 40px;
-            color: white;
-            font-size: 0.9rem;
-        }
-        .cep-input-group input:focus {
-            outline: none;
-            border-color: #d4af37;
-        }
-        .search-cep-btn {
-            background: #d4af37;
-            border: none;
-            padding: 0 20px;
-            border-radius: 40px;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .address-info {
-            background: #1a1a1a;
-            padding: 12px;
-            border-radius: 16px;
-            font-size: 0.8rem;
-            color: #ccc;
-            margin-top: 8px;
-        }
-        .freight-info {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed #333;
-            color: #d4af37;
-            font-weight: 600;
-        }
-
-        .cart-footer {
-            padding: 1.5rem;
-            border-top: 1px solid #2c2c2c;
-            background: #070707;
-        }
-        .total-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .checkout-btn {
-            background: #25d366;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 14px;
-            font-weight: 800;
-            border-radius: 40px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .checkout-btn:hover {
-            background: #128C7E;
-            transform: scale(1.01);
-        }
-        .empty-cart-msg {
-            text-align: center;
-            padding: 2rem;
-            color: #aaa;
-        }
-
-        /* SEÇÃO SOBRE E REDES SOCIAIS */
-        .about-section {
-            margin-top: 4rem;
-            background: linear-gradient(135deg, #0a0a0a, #111);
-            border-radius: 32px;
-            padding: 3rem 2rem;
-            border: 1px solid #2a2a2a;
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .about-text h3 {
-            color: #d4af37;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        .about-text p {
-            color: #bbb;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        .social-icon {
-            background: #1f1f1f;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            color: #d4af37;
-            font-size: 1.5rem;
-            text-decoration: none;
-            border: 1px solid #333;
-        }
-        .social-icon:hover {
-            background: #d4af37;
-            color: black;
-            transform: translateY(-5px);
-            border-color: #d4af37;
-        }
-        .info-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .info-card {
-            background: #111;
-            padding: 1rem;
-            border-radius: 20px;
-            border-left: 3px solid #d4af37;
-        }
-        .info-card i {
-            color: #d4af37;
-            margin-right: 10px;
-        }
-        .info-card strong {
-            color: white;
-        }
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .container {
-                padding: 1rem;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .product-img {
-                height: 220px;
-            }
-        }
-        .toast-msg {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: #d4af37;
-            color: black;
-            padding: 12px 24px;
-            border-radius: 40px;
-            font-weight: 600;
-            z-index: 1200;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transform: translateY(100px);
-            opacity: 0;
-            transition: 0.2s;
-        }
-        .toast-msg.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid #1f1f1f;
-            margin-top: 3rem;
-            color: #6c6c6c;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Black - Moda Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-<header class="header">
-    <div class="nav-container">
-        <div class="logo-area">
-            <span class="logo">STYLE BLACK</span>
-            <span class="style-badge">✦ PREMIUM ✦</span>
-            <span class="logo-sub">since 2025</span>
-        </div>
-        <div class="cart-icon" id="openCartBtn">
-            <i class="fas fa-shopping-bag" style="color: #d4af37; font-size: 1.3rem;"></i>
-            <span class="cart-count" id="cartCount">0</span>
-            <span class="cart-price" id="cartTotalPrice">R$ 0</span>
-        </div>
-    </div>
-</header>
-
-<main class="container">
-    <div class="hero">
-        <h1>BLACK EDITION 2026</h1>
-        <p>Moda urbana com elegância dourada | Coleção primavera/verão</p>
-        <div class="gold-border"></div>
-        <div class="collection-tag">
-            <i class="fas fa-crown"></i> NOVA COLEÇÃO 2026 <i class="fas fa-fire"></i>
-        </div>
-    </div>
-
-    <div class="brand-filters" id="brandFilters">
-        <button class="brand-btn active" data-brand="all">TODAS</button>
-        <button class="brand-btn" data-brand="Nike">NIKE</button>
-        <button class="brand-btn" data-brand="Adidas">ADIDAS</button>
-        <button class="brand-btn" data-brand="Puma">PUMA</button>
-        <button class="brand-btn" data-brand="New Balance">NEW BALANCE</button>
-    </div>
-
-    <div class="products-grid" id="productsGrid"></div>
-
-    <!-- SEÇÃO SOBRE A EMPRESA E REDES SOCIAIS -->
-    <div class="about-section">
-        <div class="about-grid">
-            <div class="about-text">
-                <h3><i class="fas fa-gem"></i> Style Black</h3>
-                <p>Nascida em 2025 com a missão de revolucionar o streetwear brasileiro, a <strong>Style Black</strong> combina a elegância do preto com o brilho exclusivo do dourado. Trabalhamos com as maiores marcas mundiais como Nike, Adidas, Puma e New Balance, oferecendo produtos autênticos e edições limitadas.</p>
-                <p><strong>Nossa essência:</strong> Moda que transcende tendências. Cada peça é selecionada para quem busca atitude, conforto e estilo único. Atendimento premium e entrega rápida para todo Brasil.</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <span>STYLE BLACK</span>
             </div>
-            <div class="info-cards">
-                <div class="info-card">
-                    <i class="fas fa-truck-fast"></i> <strong>Entrega Expressa</strong><br>
-                    <span>Enviamos para todo Brasil | Frete via CEP</span>
+            <nav class="nav">
+                <a href="#home" class="active">Home</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar produtos..." id="searchInput">
+                    <i class="fas fa-search"></i>
                 </div>
-                <div class="info-card">
-                    <i class="fas fa-shield-alt"></i> <strong>Produtos 100% Originais</strong><br>
-                    <span>Garantia de autenticidade das marcas</span>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-headset"></i> <strong>Atendimento Premium</strong><br>
-                    <span>Segunda a Sexta, 9h às 20h | WhatsApp exclusivo</span>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-credit-card"></i> <strong>Parcele em até 6x sem juros</strong><br>
-                    <span>Via cartão de crédito ou Pix</span>
-                </div>
+                <button class="icon-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="icon-btn" id="adminBtn" title="Painel Admin">
+                    <i class="fas fa-cog"></i>
+                </button>
             </div>
-        </div>
-    </div>
-</main>
-
-<div id="cartOverlay" class="cart-overlay">
-    <div class="cart-sidebar">
-        <div class="cart-header">
-            <h2><i class="fas fa-shopping-cart"></i> Meu Carrinho</h2>
-            <button class="close-cart" id="closeCartBtn">&times;</button>
-        </div>
-        <div class="cart-items" id="cartItemsList">
-            <div class="empty-cart-msg">Seu carrinho está vazio.</div>
-        </div>
-        
-        <!-- SISTEMA DE CEP -->
-        <div class="cep-section">
-            <div class="cep-title">
-                <i class="fas fa-map-marker-alt"></i> Calcular frete e prazo
-            </div>
-            <div class="cep-input-group">
-                <input type="text" id="cepInput" placeholder="Digite seu CEP (ex: 01001-000)" maxlength="9">
-                <button class="search-cep-btn" id="searchCepBtn"><i class="fas fa-search"></i></button>
-            </div>
-            <div id="addressResult" class="address-info" style="display: none;"></div>
-            <div id="freightResult" class="freight-info" style="display: none;"></div>
-        </div>
-        
-        <div class="cart-footer">
-            <div class="total-row">
-                <span>TOTAL</span>
-                <span id="sidebarTotalPrice">R$ 0</span>
-            </div>
-            <button class="checkout-btn" id="checkoutBtn">
-                <i class="fab fa-whatsapp"></i> FINALIZAR PEDIDO (WhatsApp)
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
             </button>
         </div>
-    </div>
-</div>
+    </header>
 
-<div id="toastMsg" class="toast-msg">✓ Item adicionado</div>
-
-<script>
-    // Produtos com imagens reais
-    const products = [
-        { id: 1, name: "Air Max Pulse", brand: "Nike", price: 649.90, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop" },
-        { id: 2, name: "Tech Fleece Hoodie", brand: "Nike", price: 429.90, image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=500&fit=crop" },
-        { id: 3, name: "Windrunner Jacket", brand: "Nike", price: 499.90, image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=500&fit=crop" },
-        { id: 4, name: "Ultraboost 5.0", brand: "Adidas", price: 899.90, image: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=500&h=500&fit=crop" },
-        { id: 5, name: "Originals Tee", brand: "Adidas", price: 199.90, image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&h=500&fit=crop" },
-        { id: 6, name: "Adicolor Sweatpants", brand: "Adidas", price: 299.90, image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=500&fit=crop" },
-        { id: 7, name: "Suede Classic", brand: "Puma", price: 379.90, image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&h=500&fit=crop" },
-        { id: 8, name: "RS-X Mesh", brand: "Puma", price: 529.90, image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&h=500&fit=crop" },
-        { id: 9, name: "574 Core", brand: "New Balance", price: 549.90, image: "https://images.unsplash.com/photo-1539185441755-769473a23570?w=500&h=500&fit=crop" },
-        { id: 10, name: "2002R Protection", brand: "New Balance", price: 849.90, image: "https://nb.scene7.com/is/image/NB/m2002rda_nb_02_i?$dw_detail_main_lg$&bgc=f1f1f1&layer=1&bgcolor=f1f1f1&blendMode=mult&scale=10&wid=1600&hei=1600" },
-        { id: 11, name: "Essentials Hoodie", brand: "Adidas", price: 359.90, image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=500&fit=crop" },
-        { id: 12, name: "Air Jordan 1 Mid", brand: "Nike", price: 1199.90, image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500&h=500&fit=crop" }
-    ];
-
-    let cart = [];
-    let addressData = null;
-    let freightValue = 0;
-
-    const productsGrid = document.getElementById('productsGrid');
-    const cartCountSpan = document.getElementById('cartCount');
-    const cartTotalPriceSpan = document.getElementById('cartTotalPrice');
-    const sidebarTotalSpan = document.getElementById('sidebarTotalPrice');
-    const cartItemsContainer = document.getElementById('cartItemsList');
-    const openCartBtn = document.getElementById('openCartBtn');
-    const closeCartBtn = document.getElementById('closeCartBtn');
-    const cartOverlay = document.getElementById('cartOverlay');
-    const toastMsgDiv = document.getElementById('toastMsg');
-    let currentBrandFilter = "all";
-
-    function saveCartToLocal() {
-        localStorage.setItem('styleBlackCart2026', JSON.stringify(cart));
-    }
-    
-    function loadCartFromLocal() {
-        const saved = localStorage.getItem('styleBlackCart2026');
-        if(saved) {
-            try {
-                cart = JSON.parse(saved);
-                renderCartUI();
-                updateCartHeader();
-            } catch(e) {}
-        }
-    }
-
-    function updateCartHeader() {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        cartCountSpan.innerText = totalItems;
-        cartTotalPriceSpan.innerText = `R$ ${totalPrice.toFixed(2)}`;
-        updateSidebarTotal();
-    }
-
-    function updateSidebarTotal() {
-        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        const totalComFrete = subtotal + freightValue;
-        if(sidebarTotalSpan) sidebarTotalSpan.innerText = `R$ ${totalComFrete.toFixed(2)}`;
-    }
-
-    function renderCartUI() {
-        if(!cartItemsContainer) return;
-        if(cart.length === 0) {
-            cartItemsContainer.innerHTML = `<div class="empty-cart-msg">🛒 Seu carrinho está vazio.</div>`;
-            updateSidebarTotal();
-            return;
-        }
-        let html = '';
-        let subtotal = 0;
-        cart.forEach((item) => {
-            const itemSubtotal = item.price * item.quantity;
-            subtotal += itemSubtotal;
-            html += `
-                <div class="cart-item" data-cartid="${item.id}">
-                    <div class="cart-item-img">
-                        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://placehold.co/200x200/1a1a1a/d4af37?text=Style+Black'">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-title">${item.name} <span style="font-size:0.7rem; color:#d4af37;">${item.brand}</span></div>
-                        <div class="cart-item-price">R$ ${item.price.toFixed(2)}</div>
-                        <div class="cart-item-qty">
-                            <button class="qty-btn" data-id="${item.id}" data-op="dec">-</button>
-                            <span>${item.quantity}</span>
-                            <button class="qty-btn" data-id="${item.id}" data-op="inc">+</button>
-                            <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </div>
-                    <div style="font-weight:bold;">R$ ${itemSubtotal.toFixed(2)}</div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1920&auto=format&fit=crop&q=80" alt="Modelo Style Black">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-particles">
+            <span style="left: 10%; animation-delay: 0s;"></span>
+            <span style="left: 20%; animation-delay: 2s;"></span>
+            <span style="left: 30%; animation-delay: 4s;"></span>
+            <span style="left: 40%; animation-delay: 1s;"></span>
+            <span style="left: 50%; animation-delay: 3s;"></span>
+            <span style="left: 60%; animation-delay: 5s;"></span>
+            <span style="left: 70%; animation-delay: 2.5s;"></span>
+            <span style="left: 80%; animation-delay: 1.5s;"></span>
+            <span style="left: 90%; animation-delay: 4.5s;"></span>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-crown"></i> Coleção Exclusiva 2024
+            </div>
+            <h1>Elegância em Preto e Prata</h1>
+            <p>Descubra nossa coleção exclusiva de moda premium. Estilo sofisticado para quem busca excelência em cada detalhe.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">10K+</span>
+                    <span class="hero-stat-label">Clientes</span>
                 </div>
-            `;
-        });
-        cartItemsContainer.innerHTML = html;
-        updateSidebarTotal();
-        
-        document.querySelectorAll('.qty-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const prodId = parseInt(btn.dataset.id);
-                const operation = btn.dataset.op;
-                const itemIndex = cart.findIndex(i => i.id === prodId);
-                if(itemIndex !== -1) {
-                    if(operation === 'inc') {
-                        cart[itemIndex].quantity += 1;
-                    } else if(operation === 'dec') {
-                        if(cart[itemIndex].quantity > 1) {
-                            cart[itemIndex].quantity -= 1;
-                        } else {
-                            cart.splice(itemIndex,1);
-                        }
-                    }
-                    saveCartToLocal();
-                    renderCartUI();
-                    updateCartHeader();
-                    renderProducts();
-                }
-            });
-        });
-        document.querySelectorAll('.remove-item').forEach(rm => {
-            rm.addEventListener('click', (e) => {
-                const idRm = parseInt(rm.dataset.id);
-                cart = cart.filter(item => item.id !== idRm);
-                saveCartToLocal();
-                renderCartUI();
-                updateCartHeader();
-                renderProducts();
-                showToast("🗑️ Item removido");
-            });
-        });
-    }
+                <div class="hero-stat">
+                    <span class="hero-stat-number">500+</span>
+                    <span class="hero-stat-label">Produtos</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">50+</span>
+                    <span class="hero-stat-label">Marcas</span>
+                </div>
+            </div>
+            <a href="#produtos" class="btn btn-primary btn-lg">
+                <i class="fas fa-arrow-right"></i>
+                Ver Coleção
+            </a>
+        </div>
+        <div class="hero-shine"></div>
+    </section>
 
-    // Simulação de busca de CEP (ViaCEP API real)
-    async function searchCep(cep) {
-        const cleanCep = cep.replace(/\D/g, '');
-        if(cleanCep.length !== 8) {
-            showToast("CEP inválido! Digite 8 números.");
-            return null;
-        }
-        try {
-            const response = await fetch(`https://viacep.com.br/ws/${cleanCep}/json/`);
-            const data = await response.json();
-            if(data.erro) {
-                showToast("CEP não encontrado.");
-                return null;
-            }
-            return data;
-        } catch(error) {
-            showToast("Erro ao buscar CEP.");
-            return null;
-        }
-    }
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>Frete Grátis</h3>
+                <p>Em compras acima de R$ 299</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Pagamento Seguro</h3>
+                <p>100% protegido</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-undo"></i>
+                </div>
+                <h3>Devolução Fácil</h3>
+                <p>30 dias para trocar</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Suporte 24/7</h3>
+                <p>Atendimento premium</p>
+            </div>
+        </div>
+    </section>
 
-    function calcularFrete(cepInfo) {
-        // Simulação de frete baseado no estado
-        const estadosFrete = {
-            'SP': 15.90,
-            'RJ': 18.90,
-            'MG': 20.90,
-            'PR': 22.90,
-            'SC': 24.90,
-            'RS': 26.90,
-            'BA': 28.90,
-            'DF': 19.90
-        };
-        const uf = cepInfo.uf;
-        const valor = estadosFrete[uf] || 35.90;
-        return valor;
-    }
+    <!-- Marcas Parceiras -->
+    <section class="brands">
+        <div class="container">
+            <p class="brands-title">Marcas Parceiras</p>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <i class="fas fa-crown"></i>
+                    <span>LUXE</span>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-gem"></i>
+                    <span>DIAMOND</span>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-star"></i>
+                    <span>PREMIUM</span>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-feather"></i>
+                    <span>ELEGANCE</span>
+                </div>
+                <div class="brand-item">
+                    <i class="fas fa-award"></i>
+                    <span>ROYAL</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    async function handleCepSearch() {
-        const cepInput = document.getElementById('cepInput');
-        const cep = cepInput.value;
-        const addressDiv = document.getElementById('addressResult');
-        const freightDiv = document.getElementById('freightResult');
-        
-        const cepData = await searchCep(cep);
-        if(cepData) {
-            addressData = cepData;
-            addressDiv.style.display = 'block';
-            addressDiv.innerHTML = `<i class="fas fa-location-dot"></i> ${cepData.logradouro}, ${cepData.bairro} - ${cepData.localidade}/${cepData.uf}`;
-            
-            freightValue = calcularFrete(cepData);
-            freightDiv.style.display = 'block';
-            freightDiv.innerHTML = `<i class="fas fa-truck"></i> Frete: R$ ${freightValue.toFixed(2)} | Prazo: 3-7 dias úteis`;
-            updateSidebarTotal();
-            showToast(`Frete calculado: R$ ${freightValue.toFixed(2)}`);
-        } else {
-            addressDiv.style.display = 'none';
-            freightDiv.style.display = 'none';
-            freightValue = 0;
-            updateSidebarTotal();
-        }
-    }
+    <!-- Coleção em Destaque - Modelos -->
+    <section class="featured-collection">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Coleção Premium</p>
+                <h2 class="section-title">Estilo que Inspira</h2>
+                <p class="section-description">Nossa coleção é pensada para pessoas que valorizam a elegância em cada detalhe</p>
+            </div>
+            <div class="featured-grid">
+                <div class="featured-item featured-large">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&auto=format&fit=crop&q=80" alt="Modelo Feminina">
+                    <div class="featured-overlay">
+                        <span class="featured-tag">Tendência</span>
+                        <h3>Elegância Feminina</h3>
+                        <p>Vestidos e acessórios sofisticados</p>
+                        <a href="#produtos" class="btn btn-outline-white">Explorar <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="featured-item">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=600&auto=format&fit=crop&q=80" alt="Modelo Masculino">
+                    <div class="featured-overlay">
+                        <span class="featured-tag">Clássico</span>
+                        <h3>Masculino</h3>
+                        <p>Ternos e estilo executivo</p>
+                    </div>
+                </div>
+                <div class="featured-item">
+                    <img src="https://images.unsplash.com/photo-1613919113640-25732ec5e61f?w=600&auto=format&fit=crop&q=80" alt="Acessórios">
+                    <div class="featured-overlay">
+                        <span class="featured-tag">Luxo</span>
+                        <h3>Acessórios</h3>
+                        <p>Joias e relógios premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function addToCart(product) {
-        const existing = cart.find(item => item.id === product.id);
-        if(existing) {
-            existing.quantity += 1;
-        } else {
-            cart.push({
-                id: product.id,
-                name: product.name,
-                price: product.price,
-                brand: product.brand,
-                image: product.image,
-                quantity: 1
-            });
-        }
-        saveCartToLocal();
-        renderCartUI();
-        updateCartHeader();
-        showToast(`➕ ${product.name} adicionado`);
-    }
+    <!-- Categorias -->
+    <section class="categories" id="categorias">
+        <div class="container">
+            <h2 class="section-title">Categorias</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="todos">
+                    <div class="category-image">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <h3>Todos</h3>
+                </div>
+                <div class="category-card" data-category="roupas">
+                    <div class="category-image">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Roupas</h3>
+                </div>
+                <div class="category-card" data-category="acessorios">
+                    <div class="category-image">
+                        <i class="fas fa-watch"></i>
+                    </div>
+                    <h3>Acessórios</h3>
+                </div>
+                <div class="category-card" data-category="calcados">
+                    <div class="category-image">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <h3>Calçados</h3>
+                </div>
+                <div class="category-card" data-category="bolsas">
+                    <div class="category-image">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>Bolsas</h3>
+                </div>
+                <div class="category-card" data-category="joias">
+                    <div class="category-image">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Joias</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function showToast(msg) {
-        toastMsgDiv.innerText = msg;
-        toastMsgDiv.classList.add('show');
-        setTimeout(() => {
-            toastMsgDiv.classList.remove('show');
-        }, 1800);
-    }
+    <!-- Produtos -->
+    <section class="products" id="produtos">
+        <div class="container">
+            <h2 class="section-title">Produtos em Destaque</h2>
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="roupas">Roupas</button>
+                <button class="filter-btn" data-filter="acessorios">Acessórios</button>
+                <button class="filter-btn" data-filter="calcados">Calçados</button>
+                <button class="filter-btn" data-filter="bolsas">Bolsas</button>
+                <button class="filter-btn" data-filter="joias">Joias</button>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Produtos serão carregados dinamicamente -->
+                <div class="loading" style="grid-column: 1/-1;">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Conectando ao servidor...</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function renderProducts() {
-        let filtered = [...products];
-        if(currentBrandFilter !== 'all') {
-            filtered = filtered.filter(p => p.brand === currentBrandFilter);
-        }
-        if(productsGrid) {
-            productsGrid.innerHTML = filtered.map(prod => {
-                const cartItem = cart.find(c => c.id === prod.id);
-                const qtyInCart = cartItem ? cartItem.quantity : 0;
-                return `
-                    <div class="product-card">
-                        <div class="product-img">
-                            <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://placehold.co/400x400/1a1a1a/d4af37?text=${prod.brand}'">
+    <!-- Sobre -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=800&auto=format&fit=crop&q=80" alt="Style Black Store" class="about-img">
+                        <div class="about-image-accent"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="about-subtitle">Desde 2020</p>
+                    <h2>Sobre a Style Black</h2>
+                    <p>Somos uma marca de moda premium dedicada a oferecer peças exclusivas com design sofisticado. Nossa paleta preto e prata reflete elegância, modernidade e luxo.</p>
+                    <p>Cada item em nossa coleção é cuidadosamente selecionado para garantir qualidade superior e estilo atemporal. Trabalhamos com os melhores designers e marcas internacionais para trazer o que há de mais exclusivo.</p>
+                    <div class="about-values">
+                        <div class="about-value">
+                            <i class="fas fa-gem"></i>
+                            <div>
+                                <span>Qualidade Premium</span>
+                                <small>Materiais selecionados</small>
+                            </div>
                         </div>
-                        <div class="product-info">
-                            <span class="brand-tag">${prod.brand}</span>
-                            <div class="product-title">${prod.name}</div>
-                            <div class="product-price">R$ ${prod.price.toFixed(2)}</div>
-                            <button class="add-to-cart" data-id="${prod.id}">
-                                <i class="fas fa-shopping-cart"></i> Adicionar ${qtyInCart > 0 ? `(${qtyInCart})` : ''}
-                            </button>
+                        <div class="about-value">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <span>Entrega Rápida</span>
+                                <small>Em todo o Brasil</small>
+                            </div>
                         </div>
                     </div>
-                `;
-            }).join('');
+                </div>
+            </div>
+        </div>
+    </section>
 
-            document.querySelectorAll('.add-to-cart').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const idProd = parseInt(btn.dataset.id);
-                    const productToAdd = products.find(p => p.id === idProd);
-                    if(productToAdd) addToCart(productToAdd);
-                });
-            });
-        }
-    }
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Depoimentos</p>
+                <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"A qualidade das peças é impressionante! O vestido que comprei superou todas as expectativas. Caimento perfeito e tecido de alta qualidade."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80" alt="Ana Paula" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Ana Paula Mendes</span>
+                            <span class="testimonial-role">Cliente desde 2023</span>
+                        </div>
+                    </div>
+                </div>
 
-    function initFilters() {
-        const btns = document.querySelectorAll('.brand-btn');
-        btns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                btns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentBrandFilter = btn.dataset.brand;
-                renderProducts();
-            });
-        });
-    }
+                <div class="testimonial-card featured">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Sempre encontro o look perfeito para eventos importantes. A Style Black virou minha loja favorita. O atendimento é impecável!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Carlos Eduardo" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Carlos Eduardo Silva</span>
+                            <span class="testimonial-role">Empresário</span>
+                        </div>
+                    </div>
+                </div>
 
-    function openCartSidebar() {
-        cartOverlay.classList.add('open');
-    }
-    function closeCartSidebar() {
-        cartOverlay.classList.remove('open');
-    }
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"As joias são simplesmente deslumbrantes! Comprei um colar para minha mãe e ela ficou encantada. Embalagem linda e entrega super rápida."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80" alt="Mariana" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Mariana Costa</span>
+                            <span class="testimonial-role">Advogada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    // Finalizar pedido com WhatsApp
-    function checkoutWhatsApp() {
-        if(cart.length === 0) {
-            showToast("Seu carrinho está vazio!");
-            return;
-        }
-        
-        const subtotal = cart.reduce((acc, i) => acc + (i.price * i.quantity), 0);
-        const totalComFrete = subtotal + freightValue;
-        
-        // Montar mensagem para WhatsApp
-        let message = "🖤 *STYLE BLACK - NOVO PEDIDO* 🖤%0A%0A";
-        message += "*ITENS DO CARRINHO:*%0A";
-        cart.forEach((item, idx) => {
-            message += `${idx+1}. ${item.name} (${item.brand}) - Qtd: ${item.quantity} - R$ ${(item.price * item.quantity).toFixed(2)}%0A`;
-        });
-        message += `%0A*SUBTOTAL:* R$ ${subtotal.toFixed(2)}%0A`;
-        message += `*FRETE:* R$ ${freightValue.toFixed(2)}%0A`;
-        message += `*TOTAL:* R$ ${totalComFrete.toFixed(2)}%0A%0A`;
-        
-        if(addressData) {
-            message += `*ENDEREÇO DE ENTREGA:*%0A`;
-            message += `${addressData.logradouro}, ${addressData.bairro}%0A`;
-            message += `${addressData.localidade}/${addressData.uf} - CEP: ${addressData.cep}%0A%0A`;
-        } else {
-            message += `*OBS:* CEP não informado. Informe o endereço no chat.%0A%0A`;
-        }
-        
-        message += `*CLIENTE:* Aguardo contato para confirmação!%0A`;
-        message += `*FORMA DE PAGAMENTO:* A definir no WhatsApp.%0A`;
-        
-        // Número do WhatsApp da loja (exemplo: +5511999999999 - substitua pelo número real)
-        const phoneNumber = "5511999999999";
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-        
-        window.open(whatsappUrl, '_blank');
-        showToast("Redirecionando para WhatsApp...");
-        
-        // Opcional: limpar carrinho após finalizar? Melhor deixar o cliente finalizar no whatsapp
-        // Aqui não limpamos para manter até a confirmação
-    }
+    <!-- Instagram Feed -->
+    <section class="instagram-section">
+        <div class="container">
+            <div class="instagram-header">
+                <i class="fab fa-instagram"></i>
+                <h3>@styleblack</h3>
+                <p>Siga-nos no Instagram e compartilhe seu look com #StyleBlack</p>
+            </div>
+            <div class="instagram-grid">
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&auto=format&fit=crop&q=80" alt="Look 1">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&auto=format&fit=crop&q=80" alt="Look 2">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&auto=format&fit=crop&q=80" alt="Look 3">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1485968579169-a6e9dc7c057c?w=400&auto=format&fit=crop&q=80" alt="Look 4">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1475180098004-ca77a66827be?w=400&auto=format&fit=crop&q=80" alt="Look 5">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop&q=80" alt="Look 6">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    openCartBtn.addEventListener('click', openCartSidebar);
-    closeCartBtn.addEventListener('click', closeCartSidebar);
-    cartOverlay.addEventListener('click', (e) => {
-        if(e.target === cartOverlay) closeCartSidebar();
-    });
-    document.getElementById('checkoutBtn')?.addEventListener('click', checkoutWhatsApp);
-    document.getElementById('searchCepBtn')?.addEventListener('click', handleCepSearch);
-    document.getElementById('cepInput')?.addEventListener('keypress', (e) => {
-        if(e.key === 'Enter') handleCepSearch();
-    });
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Receba Ofertas Exclusivas</h2>
+                <p>Cadastre-se e receba 10% de desconto na primeira compra</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    function init() {
-        loadCartFromLocal();
-        renderProducts();
-        updateCartHeader();
-        renderCartUI();
-        initFilters();
-    }
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-gem"></i>
+                        <span>STYLE BLACK</span>
+                    </div>
+                    <p>Elegância e sofisticação em cada detalhe. Moda premium para quem exige o melhor.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#categorias">Categorias</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Política de Troca</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-envelope"></i> contato@styleblack.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 9999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Style Black. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-    init();
-</script>
-<footer>
-    <p><i class="fas fa-crown"></i> STYLE BLACK — ELEVANDO O STREETWEAR | OURO & PRETO | COLEÇÃO 2026 <i class="fas fa-crown"></i></p>
-    <p style="font-size:0.7rem; margin-top:8px;">
-        <i class="fab fa-instagram"></i> @styleblackoficial | 
-        <i class="fab fa-whatsapp"></i> (11) 99999-9999 | 
-        <i class="fas fa-envelope"></i> contato@styleblack.com.br
-    </p>
-    <p style="font-size:0.7rem;">Imagens reais de produtos | Moda autêntica desde 2025</p>
-</footer>
+    <!-- Modal do Carrinho -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content cart-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-bag"></i> Seu Carrinho</h2>
+                <button class="close-btn" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cartItems"></div>
+                <div class="cart-empty" id="cartEmpty">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Seu carrinho está vazio</p>
+                    <button class="btn btn-outline" onclick="document.getElementById('cartModal').classList.remove('active')">Continuar Comprando</button>
+                </div>
+            </div>
+            <div class="cart-footer" id="cartFooter">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-price" id="totalPrice">R$ 0,00</span>
+                </div>
+                <button class="btn btn-primary btn-block" id="checkoutBtn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Login Admin -->
+    <div class="modal" id="adminLoginModal">
+        <div class="modal-content auth-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-lock"></i> Acesso Administrativo</h2>
+                <button class="close-btn" id="closeAdminLogin">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="adminLoginEmail">E-mail Administrativo</label>
+                        <input type="email" id="adminLoginEmail" required placeholder="admin@styleblack.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminLoginPassword">Senha</label>
+                        <input type="password" id="adminLoginPassword" required placeholder="Sua senha">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-sign-in-alt"></i> Entrar no Painel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Checkout -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h2>Finalizar Compra</h2>
+                <button class="close-btn" id="closeCheckout">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="checkoutForm">
+                    <div class="form-section">
+                        <h3>Dados Pessoais</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkoutName">Nome Completo</label>
+                                <input type="text" id="checkoutName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkoutPhone">Telefone</label>
+                                <input type="tel" id="checkoutPhone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkoutEmail">E-mail</label>
+                            <input type="email" id="checkoutEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h3>Endereço de Entrega</h3>
+                        <div class="form-group">
+                            <label for="checkoutAddress">Endereço Completo</label>
+                            <input type="text" id="checkoutAddress" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkoutCity">Cidade</label>
+                                <input type="text" id="checkoutCity" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkoutState">Estado</label>
+                                <input type="text" id="checkoutState" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkoutZip">CEP</label>
+                                <input type="text" id="checkoutZip" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <h3>Pagamento</h3>
+                        <div class="payment-methods">
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="credit" checked>
+                                <span><i class="fas fa-credit-card"></i> Cartão de Crédito</span>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="boleto">
+                                <span><i class="fas fa-barcode"></i> Boleto</span>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="pix">
+                                <span><i class="fas fa-qrcode"></i> PIX</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="checkout-summary">
+                        <h3>Resumo do Pedido</h3>
+                        <div class="summary-items" id="summaryItems"></div>
+                        <div class="summary-total">
+                            <span>Total:</span>
+                            <span id="checkoutTotal">R$ 0,00</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirmar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Painel Admin -->
+    <div class="modal" id="adminModal">
+        <div class="modal-content admin-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> Painel Administrativo</h2>
+                <div class="header-actions">
+                    <button class="btn btn-outline" id="adminLogoutBtn" style="margin-right: 10px;">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </button>
+                    <button class="close-btn" id="closeAdmin">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="products">
+                    <i class="fas fa-box"></i> Produtos
+                </button>
+                <button class="admin-tab" data-tab="orders">
+                    <i class="fas fa-shopping-cart"></i> Pedidos
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Aba Produtos -->
+                <div class="admin-content active" id="adminProducts">
+                    <div class="admin-actions">
+                        <button class="btn btn-primary" id="addProductBtn">
+                            <i class="fas fa-plus"></i> Novo Produto
+                        </button>
+                    </div>
+                    <div class="admin-table-container">
+                        <table class="admin-table" id="productsTable">
+                            <thead>
+                                <tr>
+                                    <th>Imagem</th>
+                                    <th>Nome</th>
+                                    <th>Categoria</th>
+                                    <th>Preço</th>
+                                    <th>Estoque</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Aba Pedidos -->
+                <div class="admin-content" id="adminOrders">
+                    <div class="admin-table-container">
+                        <table class="admin-table" id="ordersTable">
+                            <thead>
+                                <tr>
+                                    <th>Pedido #</th>
+                                    <th>Cliente</th>
+                                    <th>Data</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Produto (Add/Edit) -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="productModalTitle">Novo Produto</h2>
+                <button class="close-btn" id="closeProductModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productName">Nome do Produto</label>
+                            <input type="text" id="productName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCategory">Categoria</label>
+                            <select id="productCategory" required>
+                                <option value="roupas">Roupas</option>
+                                <option value="acessorios">Acessórios</option>
+                                <option value="calcados">Calçados</option>
+                                <option value="bolsas">Bolsas</option>
+                                <option value="joias">Joias</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productPrice">Preço (R$)</label>
+                            <input type="number" id="productPrice" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productStock">Estoque</label>
+                            <input type="number" id="productStock" min="0" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Descrição</label>
+                        <textarea id="productDescription" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">URL da Imagem</label>
+                        <input type="url" id="productImage" placeholder="https://...">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar Produto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Operação realizada com sucesso!</span>
+    </div>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
